@@ -1,2 +1,2 @@
-# Cloud_creater
-used for cloud creation
+# Terraform-script
+Create All AWS resources

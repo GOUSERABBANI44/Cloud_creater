@@ -1,0 +1,292 @@
+
+------------------------------------------------------------------------
+#!/bin/bash
+echo "what is your name?"
+read name
+echo "$name Hi, Welcome to my world"
+-------------------------------------------------------------------------------
+
+
+----------------------------------------------------------------------------------
+#!/bin/bash
+echo "please select the needed option"
+
+echo  "a = Display present time"
+
+echo "b = Display present path"
+
+echo  "c = Dispaly list of files along with all details"
+
+read optional
+
+case $optional in
+        a) date;;
+        b) pwd;;
+        c) ls -l;;
+        d) hostname;;
+        e) lscpu;;
+        *)echo "please select the valide option"
+esac
+------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------
+#!/bin/bash
+
+
+
+for number in {1..10000}
+do
+        echo "The number is $number"
+done
+
+for work in Freshup Breakfast Office Do-Work Came-back-to-home
+do
+        echo "My daily routine is $work"
+done
+
+
+for task in folder{1..5}
+do
+        mkdir $task
+done
+
+for task in file{1..5}
+do
+        touch $task
+done
+
+#Here, Creating  the names to for loop to display one file content by using for loop scripting
+
+Gouse
+
+Rabbani
+
+Sharuk
+
+Power
+
+
+host="/home/ec2-user/scripts/guest"
+
+for item in $(cat $host)
+
+do
+        echo $item
+done
+
+
+
+#for shortcut for a command use alias Ex: alias myn--<configured name for command>="ls -ltr | awk '{print \$9}'"--->now enter myn the out put looks like file.txt,folder2,demo.--for normal command is ls -ltr | awk '{print $9}'
+#you can run the shell script files--.sh-- from outside of the directory of scripts just use this command as scripts/any shell script files (.sh)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+#!/bin/bash
+
+
+count=10
+
+num=10
+
+while [ $num == $count ]
+do
+        echo $num
+
+        let num++
+done
+----------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------
+#!/bin/bash
+#there are two types of variables one is RANDOM and another one is UID(user id).
+
+#Generate a number beetween 1 and 6
+
+num=$(($RANDOM % 6 + 1))
+
+echo "The number is $num"
+
+# To check the RANDOM command in terminal by using this command <echo $RANDOM> and it generates integers between 0 to 32767.
+
+
+#To check user is root or not by using this UID variable root user value is "0"
+
+
+if [[ $UID -eq 0 ]]
+
+then
+        echo "your a root user"
+else
+        echo "your not a root user"
+fi
+
+#you run this shell script in root user it shows your in root otherwise it shows your not a root user but you use this command <sudo ./file.sh> it will shows your a root user.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------
+#!/bin/bash
+
+
+Group () {
+        echo "My name is $1"
+        echo "My age is $2"
+        echo "My salary is $3"
+}
+
+Group Gouse 22 50000/-
+Group Rabbani 23 70000/-
+Group Sharuk 24 80000/-
+Group RakhiBhai 26 100000/-
+-----------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------
+#!/bin/bash
+
+function rabbani {
+
+        echo "this is my File name $(basename $0)"
+        sur=Shaik
+        echo "show my surname $sur"
+        read Name
+        echo "$Name Hi, Are you married"
+}
+
+
+rabbani
+rabbani
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+#!/bin/bash
+
+rabbani () {
+        sur=Shaik
+
+        echo "THis is My initial $sur"
+
+        echo "file name $(basename $0)"
+
+        read name
+
+        echo "$name are you single"
+}
+
+
+rabbani
+---------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------
+#!/bin/bash
+
+addition () {
+        num1=$1
+        num2=$2
+        num3=$3
+        let sum=$num1+$num2+$num3
+        echo "sum of $num1, $num2 and $num3 is $sum"
+}
+
+addition 20 40 60
+addition 30 40 90
+addition 60 70 40
+
+
+sub () {
+        num1=$1
+        num2=$2
+        num3=$3
+        let sub=$num1-$num2-$num3
+        echo "subtraction of $num1, $num2 and $num3 is $sub"
+}
+
+sub 20 10 5
+sub 30 40 60
+sub 80 50 90
+
+
+mul () {
+        num1=$1
+        num2=$2
+        num3=$3
+        let sub=$num1*$num2*$num3
+        echo "subtraction of $num1, $num2 and $num3 is $sub"
+}
+
+mul 20 10 5
+mul 30 40 60
+mul 80 50 90
+
+
+div () {
+        num1=$1
+        num2=$2
+
+        let sub=$num1/$num2
+        echo "subtraction of $num1, $num2 is $sub"
+}
+
+div 20 10
+div 30 40
+div 80 50
+--------------------------------------------------------------------
+
+-------------------------------------------------->
+#!/bin/bash
+#The Digital Clock
+
+Red=$'\e[1;31m'
+Green=$'\e[1;32m'
+Blue=$'\e[1;34m'
+
+while true
+do
+        clear
+        echo $Red $(date +%T)
+        sleep 1s
+done
+-----------------------------------------------
+
+-------------------------------------------------------
+#!/bin/bash
+#Create the General password(Alphabetical-Special Charcters like +, -, /, \, *, &, ^, %, $, #, @, !)
+
+
+echo "Generating the normal Password"
+
+sleep 2
+
+echo "Please enter the length of the Password:"
+
+read passwd
+
+for p in $(seq 1 5);
+do
+
+        $Green openssl rand -base64 48 | cut -c1-$passwd
+done
+
+-----------------------------------------------------------------------
+
+---------------------------------------------------------------------------
+
+#!/bin/bash
+#To Generate the Natural ganerator(hexadecimal-like alphabetical)
+
+echo "Welcome to the New Password Generator"
+
+sleep 2
+
+echo "Please Enter the length of the password:"
+
+read passwd
+
+for p in $(seq 1 5);
+do
+        openssl rand -hex 48 | cut -c1-$passwd
+
+done
+------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------
+
+
